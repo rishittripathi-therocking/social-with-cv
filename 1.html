@@ -1,0 +1,105 @@
+  <!DOCTYPE html>
+<html>
+<head>
+  <title>Social</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script>
+    var c;
+    var x;
+    var y;
+    var r;
+    var count=0;
+    $(document).ready(function(){
+      alert("Please Click on the reply button to reply to the comment as well as to see the replies");
+      $(document).on("click",'.commentbtn',function(){
+        x=$(this).parent().prev().children().first().next().val();
+        y=$(this).parent().prev().children().first().val();
+        var d = new Date();
+var strDate = d.getFullYear() + "/" + (d.getMonth()+1) + "/" + d.getDate();
+        if(x==''||x==null||y==''||y==null)
+        {
+         alert("Please fill all details first");
+        }
+         else
+         {
+          c="<div class='media'>"+"<div class='media-left'>"+"<img src='avatar2.png' class='media-object img-circle' style='height:100px;width:100px;'>"+"</div>"+"<div class='media-body'>"+"<h4 class='media-heading'>"+y+" <small><i>Posted on "+d+"</i></small>"+"</h4>"+"<p>"+x+"</p>"+"<button class='btn btn-warning replybtn' style='float:right;'>Reply</button>"+"<p>"+"<span class='glyphicon glyphicon-thumbs-up lcount'> "+0+"</span>       "+"      <span class='glyphicon glyphicon-comment ccount'> "+0+"</span>"+"</p>"+"</div>"+"<div class='slider'>"+"<div class='media'>"+"<div class='media-left'>"
+    +"<img src='avatar3.png' class='media-object img-circle' style='height:100px;width:100px;'>"
+    +"</div>"+"<div class='media-body'>"+
+  "<input type='text' class='form-control replyusername' placeholder='Enter your Name here' style='resize:none:border-radius:50px'>"+
+      "<textarea rows='4' cols='60' class='form-control replybox' style='resize:none:border-radius:50px'  placeholder='Add your comments here'></textarea>"+"</div>"+
+    "<div class='media-right'>"+
+      "<button type='button' class='btn btn-danger commentbtn'>Post</button>"+
+    "</div>"+
+    "<br><br></div>"+"</div>"+"</div>";
+          $(this).parent().parent().parent().append(c);
+          c="";
+          $(this).parent().prev().children().first().next().val("");
+          $(this).parent().prev().children().first().val("");
+          $(".slider").hide("slow");
+          if(count>0)
+          $(this).parent().parent().parent().prev().children("p").children("span").next().text(parseInt($(this).parent().parent().parent().prev().children("p").children("span").next().text())+1);
+        count+=1;
+         }
+      });
+      $(document).on("click",'.replybtn',function(){
+      $(this).parent().next().slideToggle("slow");
+      });
+      $(document).on("click",'.lcount',function(){
+      $(this).text(parseInt($(this).text())+1);
+      });
+      
+    });
+  </script>
+  <style>
+  .media-object{
+      width:140px;height:145px;
+    }
+   .slider
+   {
+    padding:10px;
+    
+   }
+   .footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   text-align: center;
+ }
+  </style>
+</head>
+<body>
+<div class="container">
+    <ul class="pager">
+  <li><a href="cv (1).html">Previous</a></li>
+ <ul class="pagination">
+    <li><a href="Multiplayer maze game-4.html">Maze Game</a></li>
+    <li><a href="tictac.html">Tic Tac Toe</a></li>
+    <li><a href="scicalcjquery.html">Calculator</a></li>
+    <li><a href="cv (1).html">My Cv</a></li>
+    <li><a href="#">5</a></li>
+  </ul>
+<li><a href="Multiplayer maze game-4.html">Next</a></li></ul>
+<br>
+  <div class="media" class="commentdiv">
+    <div class="media-left">
+      <img src="avatar3.png" class="media-object img-circle">
+    </div>
+    <div class="media-body">
+      <input type="text" class="form-control" placeholder="Enter your Name here" style="resize:none:border-radius:50px">
+      <textarea rows="4" cols="100" class="form-control" style="resize:none;"  placeholder="Add your comments here" style="resize:none:border-radius:50px"></textarea>
+    </div>
+    <div class="media-right">
+      <button type="button" class="btn btn-danger commentbtn" >Post</button>
+    </div>
+    <br>
+    <br>
+  </div>
+</div>  
+
+</body>
+</html>

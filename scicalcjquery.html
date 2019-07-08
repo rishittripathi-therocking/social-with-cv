@@ -1,0 +1,124 @@
+<!DOCKTYPE html>
+<head>
+<title>jQuery Calculator</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<style>
+input[type=button]
+{
+width:72;
+height:40;
+margin:0;
+padding:0;
+border-radius:10px;
+background-color:lightblue;
+margin-top:4px;
+font-size:23px;
+}
+
+</style>
+<script>
+$(document).ready(function(e){
+
+  $(".number").click(function(){
+      var a =$(this).val();
+    $(".display").val($(".display").val() +a);
+  });
+
+
+
+$(".equal").click(function(){
+    $(".display").val(eval($(".display").val()));
+  });
+
+$(".sinofx").click(function(){
+    $(".display").val(Math.sin($(".display").val()));
+  });
+
+$(".cosofx").click(function(){
+    $(".display").val(Math.cos($(".display").val()));
+  });
+
+$(".tanofx").click(function(){
+    $(".display").val(Math.tan($(".display").val()));
+  });
+
+$(".logofx").click(function(){
+    $(".display").val(Math.log($(".display").val()));
+  });
+
+$(".pieofx").click(function(){
+   a=$(".display").val();
+$(".display").val(eval(3.14159265));
+  });
+
+$(".square").click(function(){
+    $(".display").val(Math.pow($(".display").val(),2));
+  });
+
+$(".clear").click(function(){
+    $(".display").val(null);
+  });
+
+$(".back").click(function(){
+var number=$(".display").val();
+   number=number.substring(0, number.length-1);
+$(".display").val(number);
+  });
+});
+
+</script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+ 
+<center><h1 style=" font-size:60; color:indigo;">jQuery Calculator</h1></center>
+<br>
+
+<center>
+<input type="display" style="text-align:right; border-radius:15px; background-color:lightgreen; 
+width:450; height:50; font-size:20;" class="display" placeholder="0"><br>
+<br>
+<input type="button" class="sinofx" value="sin" style="background-color:#FB5604;">
+<input type="button" class="number" value="1" style="background-color:#09F522;">
+<input type="button" class="number" value="2" style="background-color:#09F522;">
+<input type="button" class="number" value="3" style="background-color:#09F522;">
+<input type="button" class="number" value="+" style="background-color:#09F522;">
+<input type="button" class="clear" value="Clear" style="background-color:#FB5604;"><br>
+<input type="button" class="cosofx" value="cos" style="background-color:#FB5604;">
+<input type="button" class="number" value="4" style="background-color:#09F522;">
+<input type="button" class="number" value="5" style="background-color:#09F522;">
+<input type="button" class="number" value="6"  style="background-color:#09F522;">
+<input type="button" class="number" value="-" style="background-color:#09F522;">
+<input type="button" class="back" value="Back" style="background-color:#FB5604;"><br>
+<input type="button" class="tanofx" value="tan" style="background-color:#FB5604;">
+<input type="button" class="number" value="7" style="background-color:#09F522;">
+<input type="button" class="number" value="8" style="background-color:#09F522;">
+<input type="button" class="number" value="9" style="background-color:#09F522;">
+<input type="button" class="number" value="*" style="background-color:#09F522;">
+<input type="button" class="logofx" value="log" style="background-color:#FB5604;"><br>
+<input type="button" class="number" value="." style="background-color:#FB5604;">
+<input type="button" class="equal" value="=" style="background-color:#09F522;">
+<input type="button" class="number" value="0" style="background-color:#09F522;">
+<input type="button" class="square" value="^" style="background-color:#09F522;">
+<input type="button" class="number" value="/" style="background-color:#09F522;">
+<input type="button" class="pieofx" value="pie" style="background-color:#FB5604;">
+<div class="container">
+<ul class="pager">
+  <li><a href="tictac.html">Previous</a></li>
+ <ul class="pagination">
+    <li><a href="Multiplayer maze game-4.html">Maze Game</a></li>
+    <li><a href="tictac.html">Tic Tac Toe</a></li>
+    <li><a href="scicalcjquery.html">Calculator</a></li>
+    <li><a href="cv (1).html">My Cv</a></li>
+    <li><a href="#">5</a></li>
+  </ul>
+<li><a href="cv (1).html">Next</a></li></ul>
+</center><br>
+</body>
+</html>
